@@ -10,8 +10,8 @@ const e = require('express');
 app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded())
-// app.get('/', (req, res) => res.send('Hello World!'))
-mongoose.connect("mongodb+srv://nagledarshan12:Darshan108@dan.szrelsh.mongodb.net/?retryWrites=true&w=majority&appName=DAN").then(console.log("connected ")).catch((e) => console.log(e))
+app.get('/', (req, res) => res.send('Hello World!'))
+mongoose.connect("mongodb+srv://nagledarshan12:pass@dan.szrelsh.mongodb.net/?retryWrites=true&w=majority&appName=DAN").then(console.log("connected ")).catch((e) => console.log(e))
 app.get('/api/user', async (req, res) => {
     try {
         const user = await User.find();
